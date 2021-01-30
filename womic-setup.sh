@@ -15,44 +15,44 @@ pulseaudio -k
 
 # Restart snd-aloop
 
-echo "\n\n\nRestart snd-aloop ..."
+echo -e "\n\n\nRestart snd-aloop ..."
 
 sudo modprobe -r snd-aloop
 
 sudo modprobe snd-aloop
 
-echo "\n✓"
+echo -e "\n✓"
 
 sleep 2
 
 # Start PulseAudio
 
-echo "\n\nStarting PulseAudio ..."
+echo -e "\n\nStarting PulseAudio ..."
 
 pulseaudio --start
 
-echo "\n✓"
+echo -e "\n✓"
 
 sleep 2
 
 # Getting user variables
 
-echo "\n\nWhich connection method to use? (Wifi, Bluetooth)"
+echo -e "\n\nWhich connection method to use? (Wifi, Bluetooth)"
 
 read connection_method
 
 sleep 2
 
-echo "\nIP address of Phone?"
+echo -e "\nIP address of Phone?"
 
 read ip_address
 
 sleep 2
 
-echo "\n\n✓ Saved settings"
+echo -e "\n\n✓ Saved settings"
 
 # Connect client to mic server
 
-echo "\n\nConnecting mic to Client ..."
+echo -e "\n\nConnecting mic to Client ..."
 
-while true; do nohup MicClient -t $connection_method $ip_address > /dev/null 2>&1; sleep 1; done & 
+while true; do nohup /usr/bin/MicClient/micclient-x86_64.AppImage -t $connection_method $ip_address > /dev/null 2>&1; sleep 1; done & 
