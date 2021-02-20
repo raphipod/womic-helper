@@ -3,6 +3,8 @@
 This installer contains two scripts that install & setup WoMic on
 Linux.
 
+! DO NOT USE, NOT READY YET !
+
 ## Prerequisites
 
 - WoMic should be installed on your phone
